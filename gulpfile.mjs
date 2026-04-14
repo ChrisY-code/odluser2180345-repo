@@ -91,7 +91,6 @@ function copyData() {
 // Copy images with minimal processing to avoid corruption
 function copyImages() {
   return gulp.src(paths.images.src, { encoding: false })
-    .pipe(imagemin())
     .pipe(gulp.dest(paths.images.dest))
     .on('error', function (err) {
       console.error('Error in copyImages task', err.toString());
